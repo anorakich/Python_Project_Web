@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{user.username}} personal page</h1>
+{% if user == current_user %}
+<h4>create new post</h4>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>{{ form.text() }}</p>
+    <div class="waves-effect waves-light btn-large blue lighten-1 #546e7a blue-grey darken-1">
+        {{ form.submit() }}
+    </div>
+</form>
+{% else %}
+{% if subscribed %}
+<h3><a href={{url_for('unsubscribe', username=user.username)}}>unsubscribe</a></h3>
+{% else %}
+<h3><a href={{url_for('subscribe', username=user.username)}}>subscribe</a></h3>
+{% endif %}
+{% endif %}
+{% for post in posts %}
+<div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+                <span class="card-title">author : {{post.author.username}}</span>
+                <span>created : {{post.date_created.strftime("%b %d %Y %H:%M:%S")}}</span><p>{{post.text}}</p>
+            </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

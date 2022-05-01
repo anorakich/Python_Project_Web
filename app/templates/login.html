@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{%block content%}
+<h1>sign in</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}
+        {{ form.username() }}
+    </p>
+    <p>
+        {{ form.password.label }}
+        {{ form.password() }}
+    </p>
+    <div class = "row">
+    <div class="waves-effect waves-light btn-large blue lighten-1 #546e7a blue-grey darken-1">
+        {{ form.submit() }}
+    </div>
+    <a href={{url_for('register')}} class="waves-effect waves-light btn-large blue lighten-1 #546e7a blue-grey darken-1" >
+        register</a>
+    </div>
+</form>
+{% endblock %}

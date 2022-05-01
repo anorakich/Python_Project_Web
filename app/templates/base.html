@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"
+          media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <meta charset="UTF-8">
+    <title>microblog</title>
+
+</head>
+<body>
+<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+<main>
+<nav>
+    <div class="nav-wrapper">
+        <a href= {{url_for("index")}} class="brand-logo">Really cool site with your microblog</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {% if current_user.is_authenticated %}
+            <li><form action="/search" method="POST">
+                   <input type="text" name="username" placeholder="Search...">
+              </form></li>
+            <li><a href={{ url_for('index') }}>Home</a></li>
+            <li><a href={{ url_for('globalNews') }}>global news</a></li>
+            <li><a href={{ url_for('user', username=current_user.username) }}>Profile</a></li>
+            <li><a href={{ url_for('logout') }}>Logout</a></li>
+            {% else %}
+            <li><a href={{ url_for('login') }}>Login</a></li>
+            <li><a href={{ url_for('register') }}>Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+{% block content %}{% endblock %}
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Created by Nikita Shevchenko B05-124</h5>
+                <p class="grey-text text-lighten-4">to send feedback you can write on my email or in telegram</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://t.me/everlasting_cringe">telegram</a></li>
+                    <li>shevchenko.nv@phystech.edu</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
