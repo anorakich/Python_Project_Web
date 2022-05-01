@@ -114,4 +114,4 @@ def search():
 
 @app.route('/page_not_found')
 def page_not_found():
-    return ("404 error page not found")
+    return ("error 404 not found")
