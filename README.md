@@ -13,7 +13,11 @@
 * ссылка на telegram и почта создателя 
 ### Запуск
 > $ git clone git@github.com:anorakich/Python_Project_Web.git
+> 
 > $ cd Python_Project_Web
+>
 > $ git checkout dev
+>
 > $ source venv/bin/activate
+>
 > $ flask run
