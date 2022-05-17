@@ -12,7 +12,7 @@
 * поиск пользователей по имени (переводит вас на страничку пользователя с таким именем или же на _error 404_)
 * ссылка на telegram и почта создателя 
 ### Запуск
-перейдите в virtual environment
-> $ export FLASK_APP=main.py
-> 
+> $ git clone git@github.com:anorakich/Python_Project_Web.git
+> $ cd Python_Project_Web
+> $ source venv/bin/activate
 > $ flask run
