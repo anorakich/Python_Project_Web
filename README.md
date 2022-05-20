@@ -18,6 +18,13 @@
 >
 > $ git checkout dev
 >
+> $ cd server
+>
 > $ set FLASK_APP=main.py
 >
 > $ flask run
+> 
+> open new terminal window 
+> $ cd ../client
+>
+>  $ python3 client.py
