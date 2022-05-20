@@ -18,6 +18,6 @@
 >
 > $ git checkout dev
 >
-> $ source venv/bin/activate
+> $ set FLASK_APP=main.py
 >
 > $ flask run
